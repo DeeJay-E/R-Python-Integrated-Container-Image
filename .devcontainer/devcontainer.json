@@ -17,56 +17,9 @@
     "waitFor": "onCreateCommand",
     "onCreateCommand": "sudo bash .devcontainer/configure_environment.sh",
     "updateContentCommand": "sudo bash .devcontainer/install-dev-tools.sh",
-    "postAttachCommand": "sudo bash .devcontainer/post_attach.sh",
-    "postStartCommand": ["git config --global --add safe.directory ${containerWorkspaceFolder}",
-                        "sudo bash .devcontainer/renv-setup.r"],
+    "postStartCommand": "bash .devcontainer/post_start.sh",
+    "postAttachCommand": "bash .devcontainer/post_attach.sh",
     "customizations": {
-        "codespaces": {
-            "openFiles": []
-        },
-        "vscode": {
-            "extensions": [
-                "ms-toolsai.jupyter",
-                "ms-python.python",
-                "ms-python.black-formatter",
-                "ms-python.isort",
-                "ms-python.mypy-type-checker",
-                "ms-python.flake8",
-                "streetsidesoftware.code-spell-checker",
-                "REditorSupport.r",
-                "RDebugger.r-debugger",
-                "ms-toolsai.vscode-jupyter-cell-tags",
-                "quarto-dev.quarto"
-            ]
-        },
-        "settings": {
-            "python.terminal.activateEnvInCurrentTerminal": true,
-            "python.defaultInterpreterPath": ".venv/bin/python",
-            "python.autoComplete.extraPaths": [
-                "./.venv/bin",
-                "./.venv/lib"
-            ],
-            "python.analysis.extraPaths": [
-                "./.venv/bin",
-                "./.venv/lib"
-            ],
-            "black-formatter.args": [
-                "--line-length",
-                "79"
-            ],
-            "isort.args": [
-                "--profile",
-                "black"
-            ],
-            "r.rterm.linux": "/usr/bin/R",
-            "r.rpath.linux": "/usr/bin/R",
-            "r.rterm.option": [
-                "--no-save",
-                "--no-restore",
-                "--quiet"
-            ],
-            "r.bracketedPaste": true,
-            "r.plot.useHttpgd": true
-        }
+        // ... rest of your customizations
     }
 }
